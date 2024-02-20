@@ -1,0 +1,15 @@
+{# templates/producto/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lista de Productos</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.Nombre }} - {{ product.Precio }}
+                <a href="{{ path('ver_producto', {'id': product.id}) }}">Ver Detalles</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

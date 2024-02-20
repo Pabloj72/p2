@@ -1,0 +1,14 @@
+{# templates/producto/detalle.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Detalles del Producto</h1>
+    <p>{{ producto.Nombre }}</p>
+    <p>Precio: {{ producto.Precio }}</p>
+    <p>Descripción: {{ producto.Descripcion }}</p>
+
+    <form action="{{ path('agregar_al_carrito', {'id': producto.id}) }}" method="post">
+        <button type="submit">Agregar al Carrito</button>
+    </form>
+{% endblock %}
